@@ -18,7 +18,7 @@ const Header = () => {
   return (
     
     <header className="px-4 py-5 bg-white border-b">
-      <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
 
       <div className="md:flex md:justify-between">
         <h2 className="text-4xl text-sky-600 font-black mb-5 md:mb-0 text-center">

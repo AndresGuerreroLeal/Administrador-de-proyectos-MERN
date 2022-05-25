@@ -34,7 +34,7 @@ const Proyecto = () => {
   }, []);
 
   useEffect(() => {
-    socket = io(import.meta.env.VITE_BACKEND_URL);
+    socket = io(import.meta.env.VITE_BACKEND_URL,{withCredentials: true});
     socket.emit("abrir proyecto", params.id);
   }, []);
 
