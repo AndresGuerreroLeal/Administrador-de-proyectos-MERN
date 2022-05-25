@@ -34,7 +34,7 @@ const Proyecto = () => {
   }, []);
 
   useEffect(() => {
-    socket = io(import.meta.env.VITE_BACKEND_URL,{withCredentials: true});
+    socket = io(import.meta.env.VITE_BACKEND_URL);
     socket.emit("abrir proyecto", params.id);
   }, []);
 
@@ -46,7 +46,7 @@ const Proyecto = () => {
     });
 
     socket.on("tarea eliminada", (tareaEliminada) => {
-      if (tareaEliminada.proyecto === proyecto._id) {
+      if (tareaEliminada.proyecto === proyecto._id || tareaEliminada.proyecto._id === proyecto._id) {
         eliminarTareaProyecto(tareaEliminada);
       }
     });
