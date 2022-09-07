@@ -30,7 +30,7 @@ const servidor = app.listen(PORT, function (err) {
 const io = new Server(servidor, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin: '*',
     methods: ["GET", "POST"],
   },
 });
