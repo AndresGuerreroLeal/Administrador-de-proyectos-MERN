@@ -6,6 +6,8 @@ const DB = require("./config/db");
 
 const { Server } = require("socket.io");
 
+const httpServer = require("http").createServer();
+
 app.use(cors());
 app.use(express.json());
 DB();
@@ -27,7 +29,7 @@ const servidor = app.listen(PORT, function (err) {
 
 //Socket.io"
 
-const io = new Server(servidor, {
+const io = new Server(httpServer, {
   pingTimeout: 60000,
   cors: {
     origin: '*',
